@@ -1,10 +1,189 @@
-<html>
-  <head>
-    kkk
-  </head>
-  <body>
-    <H1>
-      Hello world
-    </H1>
-  </body>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <link href="outlines.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="keywords" content="планер, задачи">
+  <meta name="description" content="Планер для краткосрочного тайм-менеджмента">
+  <title>Планер мой</title>
+</head>
+
+<body>
+<header>
+  <div class="columns">
+    <div class="column70">
+      <section>
+        <h1>
+            Попытки в планирование
+        </h1>
+      </section>
+      <section class="menu">
+        <nav>
+          <ul id="navigation">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href=#>Календарь</a></li>
+            <li><a href=#>Настройки</a></li>
+          </ul>
+        </nav>
+      </section>
+    </div>
+
+    <div class="column30">
+      <section>
+        <aside>
+          <a href="https://www.youtube.com/watch?v=hvL1339luv0" id="cat">
+            <pre>
+
+
+                 |\      _,,,---,,_
+                 /,`.-'`'    -.  ;-;;,_
+                |,4-  ) )-,_..;\ (  `'-'
+               '---''(_/--'  `-'\_)            </pre>
+          </a>
+        </aside>
+      </section>
+    </div>
+  </div>
+</header>
+
+<main class="columns">
+  <div class="column30">
+    <section class="hello">
+      <article>
+        <h3>
+          Почему мы здесь?
+        </h3>
+        <p><q>Время - это не то, что у нас есть, а то, что нам требуется</q> - <cite>ChatGPT</cite></p>
+        <p>
+          У меня большие проблемы с тайм-менеджментом, поэтому я пытаюсь сделать сайт, теоретически помогающий в тайм-менеджменте.
+          Я люблю краткосрочные задачи, поэтому планнер ориентирован в первую очередь на отслеживание задач на сегодня-завтра.
+        </p>
+      </article>
+    </section>
+
+    <section class="task_creation">
+      <h3>Создать новую задачу</h3>
+      <form>
+        <label for="task">Задача:</label>
+        <input type="text" id="task" name="task_name">
+        <br>
+        <label for="description">Подробности:</label>
+        <input type="text" id="description" name="task_name">
+        <br>
+        <label for="category">Категория:</label>
+        <select id="category">
+          <option value="">Все задачи</option>
+          <option value="Fitness">На спорте</option>
+          <option value="School">Учеба</option>
+          <option value="Social">Соц взаимодейсвия</option>
+        </select>
+        <br>
+        <label for="due_date">Дедлайн:</label>
+        <input type="date" id="due_date" name="task_due_date">
+        <br>
+        <button type="submit" id="submit_task">Создать задачу</button>
+      </form>
+    </section>
+  </div>
+
+  <div class="column70">
+    <section class="task filter">
+      <h3>Фильтр по задачам</h3>
+      <label>
+        <select>
+          <option value="">Все задачи</option>
+          <option value="Fitness">На спорте</option>
+          <option value="School">Учеба</option>
+          <option value="Social">Соц взаимодейсвия</option>
+        </select>
+      </label>
+      <input type="submit" value="Filter">
+    </section>
+
+    <section>
+      <h2>Mои задачи</h2>
+      <div class="columns">
+        <div class="column50">
+          <table>
+            <thead>
+              <tr>
+                <th>Задача</th>
+                <th>Подробности</th>
+                <th>Категория</th>
+                <th>Дедлайн</th>
+                <th>Статус</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><del>Зарядка</del></td>
+                <td></td>
+                <td><del>На спорте</del></td>
+                <td><del>9:00</del></td>
+                <td><del>Отменено</del></td>
+              </tr>
+              <tr>
+                <td><em>Написть эссе</em></td>
+                <td>Дз по английскому</td>
+                <td>Учеба</td>
+                <td>13:59</td>
+                <td>В процессе</td>
+              </tr>
+              <tr>
+                <td>Встреча с друзьями</td>
+                <td>Ужин в маке</td>
+                <td>Соц взаимодействия</td>
+                <td>18:00</td>
+                <td>В планах</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="column50">
+          <table>
+            <thead>
+              <tr>
+                <th>Задача</th>
+                <th>Подробности</th>
+                <th>Категория</th>
+                <th>Дедлайн</th>
+                <th>Статус</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Зарядка</td>
+                <td></td>
+                <td>На спорте</td>
+                <td>9:00</td>
+                <td>В планах</td>
+              </tr>
+              <tr>
+                <td><em>Лаба графика</em></td>
+                <td>Разобраться с <code>ImageView.getHistogram</code></td>
+                <td>Учеба</td>
+                <td>20:59</td>
+                <td>В планах</td>
+              </tr>
+              <tr>
+                <td>Купить продукты</td>
+                <td>Молоко хлеб сосиски</td>
+                <td>Дом</td>
+                <td>23:00</td>
+                <td>В планах</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; Планер мой</p>
+</footer>
+</body>
 </html>
