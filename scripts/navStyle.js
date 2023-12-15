@@ -9,4 +9,7 @@ else if(page === "today.html"){
 else if(page === "week.html"){
     curNav=document.getElementById('to_week');
 }
+else if(page === "custom.html"){
+    curNav=document.getElementById('to_custom');
+}
 curNav.classList.add("current-mode")
