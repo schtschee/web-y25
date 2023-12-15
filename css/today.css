@@ -1,0 +1,19 @@
+.tasks-table th:nth-child(1) {
+    width: 20%;
+}
+
+.tasks-table th:nth-child(2) {
+    width: 35%;
+}
+
+.tasks-table th:nth-child(3) {
+    width: 15%;
+}
+
+.tasks-table th:nth-child(4) {
+    width: 15%;
+}
+
+.tasks-table th:nth-child(5) {
+    width: 15%;
+}
