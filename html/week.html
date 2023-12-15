@@ -4,21 +4,22 @@
     <script type="text/javascript">
         let timerStart = Date.now();
     </script>
-    <link href="outlines4.css" rel="stylesheet">
+    <link href="../css/outlines.css" rel="stylesheet">
+    <link href="../css/week.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="keywords" content="планер, задачи">
     <meta name="description" content="Планер для краткосрочного тайм-менеджмента">
     <title>Планер мой</title>
 </head>
 
-<body class="page">
+<body>
 <header>
-    <section class="page-header">
+    <section class="site_header">
         <h1>
             Попытки в планирование
         </h1>
         <aside>
-            <a href="https://www.youtube.com/watch?v=hvL1339luv0">
+            <a href="https://www.youtube.com/watch?v=hvL1339luv0" target="_blank" class="secret_link">
               <pre id="cat">
                    |\      _,,,---,,_
                    /,`.-'`'    -.  ;-;;,_
@@ -27,12 +28,13 @@
             </a>
         </aside>
     </section>
-    <section class="page-menu">
+    <section class="menu">
         <nav>
-            <ul id="navigation">
+            <ul class="navigation">
                 <li id="to_day"><a href="today.html">День</a></li>
                 <li id="to_two_days"><a href="index.html">Два дня</a></li>
                 <li id="to_week"><a href="week.html">Неделя</a></li>
+                <li id="to_custom"><a href="custom.html">Настраиваемый период</a></li>
             </ul>
         </nav>
     </section>
@@ -47,7 +49,7 @@
                     <thead>
                         <tr>
                             <th>Понедельник</th>
-                            <th>1.12</th>
+                            <th>1.01</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -69,7 +71,7 @@
                     <thead>
                     <tr>
                         <th>Вторник</th>
-                        <th>2.12</th>
+                        <th>2.01</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -83,7 +85,7 @@
                     <thead>
                     <tr>
                         <th>Среда</th>
-                        <th>3.12</th>
+                        <th>3.01</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -97,7 +99,7 @@
                     <thead>
                     <tr>
                         <th>Четверг</th>
-                        <th>4.12</th>
+                        <th>4.01</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -111,7 +113,7 @@
                     <thead>
                     <tr>
                         <th>Пятница</th>
-                        <th>5.12</th>
+                        <th>5.01</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -129,7 +131,7 @@
                     <thead>
                     <tr>
                         <th>Суббота</th>
-                        <th>6.12</th>
+                        <th>6.01</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -143,7 +145,7 @@
                     <thead>
                     <tr>
                         <th>Воскресенье</th>
-                        <th>7.12</th>
+                        <th>7.01</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -161,15 +163,15 @@
         <section class="task_creation container">
             <h3>Создать новую задачу</h3>
             <form>
-                <div class="task_creation-field">
+                <div class="input-field">
                     <label for="name">Задача:</label>
                     <input type="text" id="name" name="task_name" class="input">
                 </div>
-                <div class="task_creation-field">
+                <div class="input-field">
                     <label for="description">Подробности:</label>
                     <input type="text" id="description" name="task_description" class="input">
                 </div>
-                <div class="task_creation-field">
+                <div class="input-field">
                     <label for="category">Категория:</label>
                     <select id="category" class="input">
                         <option value="">Все задачи</option>
@@ -178,7 +180,7 @@
                         <option value="Social">Соц взаимодейсвия</option>
                     </select>
                 </div>
-                <div class="task_creation-field">
+                <div class="input-field">
                     <label for="due_date">Дедлайн:</label>
                     <input type="date" id="due_date" name="task_due_date" class="input">
                 </div>
@@ -191,7 +193,7 @@
 <footer>
     <p>&copy; Планер мой</p>
 </footer>
-<script src="scripts/loadTimeScript.js"></script>
-<script src="scripts/navStyle.js"></script>
+<script src="../scripts/loadTimeScript.js"></script>
+<script src="../scripts/navStyle.js"></script>
 </body>
 </html>
