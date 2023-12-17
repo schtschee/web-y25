@@ -74,7 +74,11 @@ function printTable(){
                     if (chosenHeaders[j]) {
                         if (j === 3) {
                             let deadline = new Date(row[j])
-                            htmlBody += "<td>" + deadline.getHours() + ":" + deadline.getMinutes() + "</td>";
+                            let mins = deadline.getMinutes();
+                            if (mins < 10) {
+                                mins = "0" + mins.toString();
+                            }
+                            htmlBody += "<td>" + deadline.getHours() + ":" + mins + "</td>";
                         } else {
                             htmlBody += "<td>" + row[j] + "</td>";
                         }
