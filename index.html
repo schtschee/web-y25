@@ -4,6 +4,7 @@
     <script type="text/javascript">
         let timerStart = Date.now();
     </script>
+    <script src="scripts/checkLocalStorage.js"></script>
     <link href="css/outlines.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
     <meta charset="UTF-8">
@@ -43,7 +44,7 @@
 <main>
     <div class="main-table">
         <section class="container">
-            <h2><span class="h2-wrapper">Mои задачи</span></h2>
+            <h2><span class="h-wrapper">Mои задачи</span></h2>
             <div class="tasks">
                 <table class="tasks-table" id="table-display">
                     <thead>
@@ -125,6 +126,20 @@
 
             </div>
         </section>
+        <section class="container">
+            <table class="tasks-table ideas-table" id="ideas-display">
+                <thead>
+                <tr>
+                    <th>Глубокие мысли (на случай если нет дел или делать их не хочется)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><span class="loader"></span></td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
     </div>
 
     <div class="main-stuff">
@@ -178,6 +193,7 @@
     <p>&copy; Планер мой</p>
 </footer>
 <script src="scripts/loadTimeScript.js"></script>
+<script src="scripts/ideasLoad.js"></script>
 <script src="scripts/pageStyleAndData.js"></script>
 </body>
 </html>
