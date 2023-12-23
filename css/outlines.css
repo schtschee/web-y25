@@ -113,7 +113,7 @@ h2{
     color: #2074a2;
 }
 
-.h2-wrapper{
+.h-wrapper{
     border-style: solid;
     border-color: #ffffff;
     border-radius: 1em;
@@ -246,3 +246,74 @@ footer {
 }
 
 
+.ideas-table th{
+    background-color: #c5e8e8;
+    text-align: left;
+    color: #071822;
+    text-shadow: none;
+}
+
+.loader {
+    display: block;
+    width: 0.8em;
+    height: 0.8em;
+    position: relative;
+    left: 0.8em;
+    border-radius: 50%;
+    color: #6cc5d2;
+    background: currentColor;
+    box-shadow: 0em 0, 2em 0, 4em 0, 6em 0;
+}
+
+.loader::after {
+    content: '';
+    position: absolute;
+    left: 2em;
+    top: 0;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 10em;
+    background:#6cc5d2;
+    animation: move 3s linear infinite alternate;
+}
+
+@keyframes move {
+    0%, 5% {
+        left: 0em;
+        width: 0.8em;
+    }
+    15%, 20% {
+        left: 0em;
+        width: 2.8em;
+    }
+    30%, 35% {
+        left: 2em;
+        width: 0.8em;
+    }
+    45%, 50% {
+        left: 2em;
+        width: 2.8em;
+    }
+    60%, 65% {
+        left: 4em;
+        width: 0.8em;
+    }
+
+    75%, 80% {
+        left: 4em;
+        width: 2.8em;
+    }
+    95%, 100% {
+        left: 6em;
+        width: 0.8em;
+    }
+}
+
+.hidden{
+    display: none;
+}
+
+.error{
+    background-color: #eaf6f6;
+    color: dimgrey;
+}
