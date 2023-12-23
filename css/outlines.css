@@ -312,3 +312,8 @@ footer {
 .hidden{
     display: none;
 }
+
+.error{
+    background-color: #eaf6f6;
+    color: dimgrey;
+}

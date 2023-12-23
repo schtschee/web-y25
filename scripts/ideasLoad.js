@@ -11,18 +11,30 @@ window.onload = async (event) => {
             await new Promise(resolve => setTimeout(resolve, 2000));
             await (i === 5) ? addLastTask(translatedText) : addTask(translatedText);
         } catch (error) {
-            alert(error);
+            sthBadHappened()
+            break;
         }
     }
 };
 
 function addLastTask(text) {
     addTask(text);
-    let loader = document.getElementsByClassName("loader").item(0);
-    loader.parentElement.parentElement.classList.add("hidden");
+    hideLoader();
 }
 
 function addTask(text) {
     let ch = document.getElementById("ideas-display").children[1].lastElementChild;
     ch.insertAdjacentHTML("beforebegin", "<tr><td>" + text + "</td></tr>");
+}
+
+function sthBadHappened(){
+    let ch = document.getElementById("ideas-display").children[1].lastElementChild;
+    ch.insertAdjacentHTML("afterend", "<tr><td>(Мысли не придумались, извините)</td></tr>");
+    document.getElementById("ideas-display").children[1].lastElementChild.classList.add("error");
+    hideLoader();
+}
+
+function hideLoader(){
+    let loader = document.getElementsByClassName("loader").item(0);
+    loader.parentElement.parentElement.classList.add("hidden");
 }
