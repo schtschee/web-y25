@@ -164,6 +164,14 @@ q{
     padding: 0.2em 0.3em;
 }
 
+#dates{
+    min-width: 16.5em;
+}
+
+#due_date{
+    max-width: 8em;
+}
+
 .button {
     border: solid #6cc5d2;
     border-radius: 0.2em;
@@ -327,7 +335,7 @@ footer {
 }
 
 .select2-container--default {
-    .select2-selection--multiple {
+    .select2-selection--multiple, .select2-selection--single {
         background-color: white;
         border: 0.1em solid #2074a2;
         border-radius: 0.15em;
@@ -372,6 +380,13 @@ footer {
 .daterangepicker td.active, .daterangepicker td.active:hover {
     background-color: #2074a2;
     border-color: transparent;
+    color: #ffffff;
+}
+
+.daterangepicker .drp-buttons .btn {
+    border: solid #6cc5d2;
+    border-radius: 0.2em;
+    background-color: #6cc5d2;
     color: #ffffff;
 }
 

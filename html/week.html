@@ -4,6 +4,15 @@
     <script type="text/javascript">
         let timerStart = Date.now();
     </script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
     <link href="../css/outlines.css" rel="stylesheet">
     <link href="../css/week.css" rel="stylesheet">
     <meta charset="UTF-8">
@@ -162,7 +171,7 @@
     <div class="main-stuff">
         <section class="task_creation container">
             <h3>Создать новую задачу</h3>
-            <form>
+            <form onSubmit="return addNewTask();">
                 <div class="input-field">
                     <label for="name">Задача:</label>
                     <input type="text" id="name" name="task_name" class="input">
@@ -174,15 +183,16 @@
                 <div class="input-field">
                     <label for="category">Категория:</label>
                     <select id="category" class="input">
-                        <option value="">Все задачи</option>
+                        <option></option>
                         <option value="Fitness">На спорте</option>
                         <option value="School">Учеба</option>
-                        <option value="Social">Соц взаимодейсвия</option>
+                        <option value="Social">Соц контакты</option>
+                        <option value="Social">Дом</option>
                     </select>
                 </div>
                 <div class="input-field">
                     <label for="due_date">Дедлайн:</label>
-                    <input type="date" id="due_date" name="task_due_date" class="input">
+                    <input type="text" id="due_date" name="task_due_date" class="input">
                 </div>
                 <button type="submit" id="submit_task" class="button">Создать задачу</button>
             </form>
