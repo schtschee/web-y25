@@ -32,27 +32,40 @@ if (page === "index.html") {
     }
 
 } else if (page === "custom.html") {
+    $(function () { //самовыполняющаяся функция для настройки календарика для ввода периода.
+        $('input[id="dates"]').daterangepicker({
+            startDate: "31.12.2023",
+            endDate: "02.01.2024",
+            locale: {
+                format: "DD.MM.YYYY"
+            }
+        });
+        $('#categoryFilter').select2({
+            width: "element"
+
+        })
+    });
     curNav = document.getElementById('to_custom');
     printTable();
 }
 curNav.classList.add("current-mode")
 
 function parseDate(s) {
-    if(s === "" || s === null)
+    if (s === "" || s === null)
         return null;
     let months = {
-        "Jan":0,
-        "Feb":1,
-        "Mar":2,
-        "Apr":3,
-        "May":4,
-        "Jun":5,
-        "Jul":6,
-        "Aug":7,
-        "Sep":8,
-        "Oct":9,
-        "Nov":10,
-        "Dec":11
+        "Jan": 0,
+        "Feb": 1,
+        "Mar": 2,
+        "Apr": 3,
+        "May": 4,
+        "Jun": 5,
+        "Jul": 6,
+        "Aug": 7,
+        "Sep": 8,
+        "Oct": 9,
+        "Nov": 10,
+        "Dec": 11
     }
     let b = s.split(" ");
     return new Date(b[3], months[b[1]], b[2]);
@@ -69,7 +82,13 @@ function createTable() {
     localStorage.setItem("header3", document.getElementById("checkbox_deadline").checked);
     localStorage.setItem("header4", document.getElementById("checkbox_status").checked);
     let filter = document.getElementById("categoryFilter");
-    localStorage.setItem("categoryFilter", filter.options[filter.selectedIndex].text);
+    let categories = [];
+    for (const option of filter.options) {
+        if (option.selected) {
+            categories.push(option.text);
+        }
+    }
+    localStorage.setItem("categoryFilter", JSON.stringify(categories));
     printTable();
     return false;
 }
@@ -84,9 +103,8 @@ function printTable() {
     if (end === null)
         end = new Date(2024, 0, 8, 0, 0, 0);
 
-    let filter = localStorage.getItem("categoryFilter");
-    if (filter === null)
-        filter = "Все задачи";
+    let categories = JSON.parse(localStorage.getItem("categoryFilter"));
+
     let elementId = "table-display";
     let chosenHeaders = [false, false, false, false, false];
     for (let i = 0; i < chosenHeaders.length; i++) {
@@ -94,11 +112,11 @@ function printTable() {
             chosenHeaders[i] = true;
         }
     }
-    tableFromLocalStorage(start, end, filter, chosenHeaders, elementId);
+    tableFromLocalStorage(start, end, categories, chosenHeaders, elementId);
     return false;
 }
 
-function tableFromLocalStorage(start, end, filter, chosenHeaders, elementId, addDateFlag=true) {
+function tableFromLocalStorage(start, end, categories, chosenHeaders, elementId, addDateFlag = true) {
     document.getElementById(elementId).innerHTML = "";
 
     let headers = ["Задача", "Подробности", "Категория", "Дедлайн", "Статус"]
@@ -118,8 +136,8 @@ function tableFromLocalStorage(start, end, filter, chosenHeaders, elementId, add
     for (let i = 0; i < tasks.length; i++) {
         let row = tasks[i];
         let deadline = new Date(row[3])
-        if(deadline >= start && deadline <= end ) {
-            if(filter === "Все задачи" || row[2] === filter) {
+        if (deadline >= start && deadline <= end) {
+            if (categories.length === 0 || categories.includes(row[2])) {
                 if (addDateFlag && (last === null || deadline.getDate() !== last.getDate())) {
                     let day = deadline.getDate();
                     if (day < 10) {

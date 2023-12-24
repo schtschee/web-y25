@@ -9,8 +9,13 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link rel="stylesheet" href="select2.css">
+    <link rel="stylesheet" href="select2-flat-theme.css">
+
     <link href="../css/outlines.css" rel="stylesheet">
     <link href="../css/custom.css" rel="stylesheet">
     <meta charset="UTF-8">
@@ -92,7 +97,7 @@
                 </div>
                 <div class="input-field">
                     <label for="categoryFilter">Фильтр по категориям:</label>
-                    <select id="categoryFilter" class="input">
+                    <select id="categoryFilter" class="input" multiple>
                         <option value="">Все задачи</option>
                         <option value="Fitness">На спорте</option>
                         <option value="School">Учеба</option>
@@ -109,20 +114,6 @@
 <footer>
     <p>&copy; Планер мой</p>
 </footer>
-<script>
-    $(function() { //самовыполняющаяся функция для настройки календарика для ввода периода.
-        $('input[id="dates"]').daterangepicker({
-            startDate: "31.12.2023",
-            endDate: "02.01.2024",
-            locale: {
-                format: "DD.MM.YYYY"
-            }
-        });
-    });
-</script>
-<script>
-    $(() => $("table-display").floatThead());
-</script>
 <script src="../scripts/loadTimeScript.js"></script>
 <script src="../scripts/pageStyleAndData.js"></script>
 </body>

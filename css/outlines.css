@@ -317,3 +317,62 @@ footer {
     background-color: #eaf6f6;
     color: dimgrey;
 }
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+    outline: 0;
+    border: 0.1em solid #2074a2;
+    border-radius: 0.15em;
+    background: transparent;
+    padding: 0.2em 0.3em;
+}
+
+.select2-container--default {
+    .select2-selection--multiple {
+        background-color: white;
+        border: 0.1em solid #2074a2;
+        border-radius: 0.15em;
+        cursor: text;
+        padding-bottom: 0.1em;
+        position: relative;
+    }
+
+    .select2-results__option--highlighted.select2-results__option--selectable {
+        background-color: #2074a2;
+        color: #ffffff;
+    }
+
+    .select2-selection--multiple .select2-selection__choice {
+        margin: 0.1em;
+        background-color: #eaf6f6;
+        border: 0.05em solid #c5e8e8;
+        color: #071822;
+    }
+
+    .select2-selection--multiple .select2-selection__choice__remove {
+        border: none;
+        border-right: 0.05em solid #c5e8e8;
+        color: #6cc5d2;
+    }
+
+    .select2-selection--multiple .select2-selection__choice__remove:hover, .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:focus {
+        background-color: #c5e8e8;
+        color: #071822;
+    }
+}
+
+.daterangepicker td.available:hover, .daterangepicker th.available:hover {
+    background-color: #c5e8e8;
+
+}
+
+.daterangepicker td.in-range {
+    background-color: #c5e8e8;
+}
+
+.daterangepicker td.active, .daterangepicker td.active:hover {
+    background-color: #2074a2;
+    border-color: transparent;
+    color: #ffffff;
+}
+
+
