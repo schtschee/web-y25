@@ -5,6 +5,15 @@
         let timerStart = Date.now();
     </script>
     <script src = "../scripts/checkLocalStorage.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
     <link href="../css/outlines.css" rel="stylesheet">
     <link href="../css/custom.css" rel="stylesheet">
     <meta charset="UTF-8">
@@ -57,15 +66,12 @@
             <h3>Настроить таблицу</h3>
             <form onSubmit="return createTable();">
                 <div class="input-field">
-                    <label for="start_date">С какого числа:</label>
-                    <input type="date" id="start_date" class="input">
-                </div>
-                <div class="input-field">
-                    <label for="end_date">По какое число:</label>
-                    <input type="date" id="end_date" class="input">
+                    <label for="dates">Период:</label>
+                    <input type="text" id="dates" class="input">
                 </div>
                 <div class="options input-field">
                     <span>Какие столбцы включить:</span>
+                    <br>
                     <label for="checkbox_name">
                         <input type="checkbox" id="checkbox_name" checked>
                         Задача
@@ -89,8 +95,7 @@
                 </div>
                 <div class="input-field">
                     <label for="categoryFilter">Фильтр по категориям:</label>
-                    <select id="categoryFilter" class="input">
-                        <option value="">Все задачи</option>
+                    <select id="categoryFilter" class="input" multiple>
                         <option value="Fitness">На спорте</option>
                         <option value="School">Учеба</option>
                         <option value="Social">Соц контакты</option>
