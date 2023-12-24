@@ -5,6 +5,12 @@
         let timerStart = Date.now();
     </script>
     <script src = "../scripts/checkLocalStorage.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <link href="../css/outlines.css" rel="stylesheet">
     <link href="../css/custom.css" rel="stylesheet">
     <meta charset="UTF-8">
@@ -57,15 +63,12 @@
             <h3>Настроить таблицу</h3>
             <form onSubmit="return createTable();">
                 <div class="input-field">
-                    <label for="start_date">С какого числа:</label>
-                    <input type="date" id="start_date" class="input">
-                </div>
-                <div class="input-field">
-                    <label for="end_date">По какое число:</label>
-                    <input type="date" id="end_date" class="input">
+                    <label for="dates">Период:</label>
+                    <input type="text" id="dates" class="input">
                 </div>
                 <div class="options input-field">
                     <span>Какие столбцы включить:</span>
+                    <br>
                     <label for="checkbox_name">
                         <input type="checkbox" id="checkbox_name" checked>
                         Задача
@@ -106,6 +109,20 @@
 <footer>
     <p>&copy; Планер мой</p>
 </footer>
+<script>
+    $(function() { //самовыполняющаяся функция для настройки календарика для ввода периода.
+        $('input[id="dates"]').daterangepicker({
+            startDate: "31.12.2023",
+            endDate: "02.01.2024",
+            locale: {
+                format: "DD.MM.YYYY"
+            }
+        });
+    });
+</script>
+<script>
+    $(() => $("table-display").floatThead());
+</script>
 <script src="../scripts/loadTimeScript.js"></script>
 <script src="../scripts/pageStyleAndData.js"></script>
 </body>

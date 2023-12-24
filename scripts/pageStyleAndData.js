@@ -40,13 +40,29 @@ curNav.classList.add("current-mode")
 function parseDate(s) {
     if(s === "" || s === null)
         return null;
-    let b = s.split(/\D/);
-    return new Date(b[0], --b[1], b[2]);
+    let months = {
+        "Jan":0,
+        "Feb":1,
+        "Mar":2,
+        "Apr":3,
+        "May":4,
+        "Jun":5,
+        "Jul":6,
+        "Aug":7,
+        "Sep":8,
+        "Oct":9,
+        "Nov":10,
+        "Dec":11
+    }
+    let b = s.split(" ");
+    return new Date(b[3], months[b[1]], b[2]);
 }
 
 function createTable() {
-    localStorage.setItem("start_date", document.getElementById("start_date").value);
-    localStorage.setItem("end_date", document.getElementById("end_date").value);
+    let startDate = $('#dates').data('daterangepicker').startDate._d; //вытаскиваем из daterangepicker начальную и конечные даты периода в формате Date
+    let endDate = $('#dates').data('daterangepicker').endDate._d;
+    localStorage.setItem("start_date", startDate);
+    localStorage.setItem("end_date", endDate);
     localStorage.setItem("header0", document.getElementById("checkbox_name").checked);
     localStorage.setItem("header1", document.getElementById("checkbox_description").checked);
     localStorage.setItem("header2", document.getElementById("checkbox_category").checked);
