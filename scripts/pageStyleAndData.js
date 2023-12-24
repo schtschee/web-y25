@@ -236,6 +236,5 @@ function addNewTask(){
     let tasks = JSON.parse(localStorage.getItem("tasks"));
     tasks.push([task, description, category, dueDate, "В планах"])
     localStorage.setItem("tasks", JSON.stringify(tasks));
-    //let loc = localStorage.getItem();
-    //alert(JSON.parse(loc));
+    alert("Ваша задача добавлена в LocalStorage, поздравляю👍");
 }
